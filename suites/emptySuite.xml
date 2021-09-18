@@ -1,0 +1,4 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+<suite name="Empty test suite">
+    <test name="Empty suite"/>
+</suite>
