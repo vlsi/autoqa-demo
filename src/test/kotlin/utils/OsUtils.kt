@@ -1,7 +1,7 @@
 package utils
 
 import io.appium.java_client.AppiumDriver
-import tests.constants.TestResults
+import tests.constants.TestResultsResults
 import utils.constants.TextColour
 
 object OsUtils {
@@ -54,9 +54,9 @@ object OsUtils {
 
     @JvmStatic
     fun returnTestResultDescription(testResult: Int): String = when (testResult) {
-        1 -> "${TextColour.GREEN.colour}${TestResults.PASSED.uppercase()}${TextColour.DEFAULT.colour}"
-        2 -> "${TextColour.RED.colour}${TestResults.FAILED.uppercase()}${TextColour.DEFAULT.colour}"
-        3 -> "${TextColour.BLUE.colour}${TestResults.SKIPPED.uppercase()}${TextColour.DEFAULT.colour}"
+        1 -> "${TextColour.GREEN.colour}${TestResultsResults.PASSED.uppercase()}${TextColour.DEFAULT.colour}"
+        2 -> "${TextColour.RED.colour}${TestResultsResults.FAILED.uppercase()}${TextColour.DEFAULT.colour}"
+        3 -> "${TextColour.BLUE.colour}${TestResultsResults.SKIPPED.uppercase()}${TextColour.DEFAULT.colour}"
         else -> "<<<Unknown test result>>>"
     }
 }

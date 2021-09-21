@@ -1,5 +1,6 @@
 package tests.demoApp.signIn
 
+import org.testng.Assert
 import org.testng.annotations.Test
 import tests.BaseTest
 import utils.Sleep
@@ -15,6 +16,10 @@ class SignInTest : BaseTest() {
             .setPassword("xxx")
             .tapSignInButton()
 
-        Sleep.sleep(3000)
+        val homeScreen = demoApp.home().homeScreen()
+        with(homeScreen) {
+            isHomeScreenLoaded
+            Assert.assertEquals("Test", getTitleText(), "Title text is not correct!")
+        }
     }
 }

@@ -33,8 +33,4 @@ open class ElementActions(driver: WebDriver, softAssert: SoftAssert) : PageActio
         }
         return false
     }
-
-    companion object {
-        private const val iOSAlertTimeout = 3
-    }
 }

@@ -1,6 +1,6 @@
 package tests.constants
 
-object TestResults {
+object TestResultsResults {
     const val PASSED = "Passed"
     const val FAILED = "Failed"
     const val SKIPPED = "Skipped"

@@ -2,6 +2,8 @@ package screens
 
 import io.appium.java_client.AppiumDriver
 import io.appium.java_client.MobileElement
+import io.appium.java_client.PerformsTouchActions
+import io.appium.java_client.TouchAction
 import io.appium.java_client.pagefactory.AppiumFieldDecorator
 import io.appium.java_client.touch.TapOptions
 import io.appium.java_client.touch.offset.ElementOption
@@ -89,7 +91,7 @@ open class PageActions protected constructor(protected var driver: WebDriver, pr
         var tapOptions: TapOptions?
         var result = false
         if (element == null) return false
-        val wait = WebDriverWait(driver, 2) // 2 sec
+        val wait = WebDriverWait(driver, Timer.WEBDRIVER_WAIT) // 2 sec
         for (i in 0 until times) {
             for (j in 0..1) { // 2 tries to make tap. 2 x 2 = 4 sec MAX! after element found.
                 // to avoid StaleElementReferenceException on Android

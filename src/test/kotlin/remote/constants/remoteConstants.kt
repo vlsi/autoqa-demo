@@ -6,5 +6,5 @@ enum class OutsourcedURLs(val url: String) {
 
 enum class SlackChannels(val value: String, val description: String) {
     TEST("xxxxx", "autoqa-local-build"),
-    DEMO_APP("xxxxx", "merchant-app-testing")
+    DEMO_APP("xxxxx", "ci-builds")
 }
