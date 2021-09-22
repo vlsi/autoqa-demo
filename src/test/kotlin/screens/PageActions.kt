@@ -60,7 +60,7 @@ open class PageActions protected constructor(protected var driver: WebDriver, pr
                 e.printStackTrace()
             }
             sleep(Timer.TAP_DELAY)
-        } while (System.currentTimeMillis() < startTime + 10 * 1000) // 10 sec
+        } while (System.currentTimeMillis() < startTime + Timer.SEND_KEYS_DELAY)
         return false
     }
 

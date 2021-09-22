@@ -12,7 +12,7 @@ import org.testng.asserts.SoftAssert
 import remote.constants.SlackChannels
 import remote.slack.SlackHelper
 import remote.slack.setTextBlock
-import tests.constants.TestResultsResults
+import tests.constants.TestResults
 import utils.DateProcessor
 import utils.Logger.print
 import utils.Logger.sysLog
@@ -128,11 +128,11 @@ open class BaseTest {
         var icon = ""
 
         when (testResultString) {
-            TestResultsResults.PASSED -> {
+            TestResults.PASSED -> {
                 resultMap = results.passedTests
                 icon = "✅"
             }
-            TestResultsResults.FAILED -> {
+            TestResults.FAILED -> {
                 resultMap = results.failedTests
                 icon = "❌"
             }
@@ -179,7 +179,7 @@ open class BaseTest {
             slackMessagePayload.add(setTextBlock(":information_source: Tests passed: $passedTestsCount / $totalTestsCount $notifyHere"))
 
             // Print sections with Failed tests
-            createTestResultsBlock(results, TestResultsResults.FAILED)
+            createTestResultsBlock(results, TestResults.FAILED)
 
             // Get which channel to send the message
             val channel: SlackChannels =
