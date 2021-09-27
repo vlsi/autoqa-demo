@@ -9,7 +9,6 @@ class HomeProvider(
     private val softAssert: SoftAssert
 ) {
 
-    fun homeScreen(): HomeScreen {
-        return HomeScreen(driver, softAssert)
-    }
+    val homeScreen: HomeScreen
+        get() = HomeScreen(driver, softAssert)
 }

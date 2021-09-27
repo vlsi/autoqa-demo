@@ -20,6 +20,10 @@ class LogInScreen(
 ) {
     override val TAG = setTag("LogInScreen()")
 
+    operator fun<R> invoke(action: LogInScreen.() -> R): R {
+        isLoginScreenLoaded
+        return action()
+    }
     // =========
     // LOCATORS
 

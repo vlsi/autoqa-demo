@@ -34,6 +34,11 @@ class HomeScreen(
     // =========
     // STEPS
 
+    operator fun<R> invoke(action: HomeScreen.() -> R): R {
+        isHomeScreenLoaded
+        return action()
+    }
+
     @get:Step("Check 'Home' screen loaded")
     val isHomeScreenLoaded: HomeScreen
         get() {

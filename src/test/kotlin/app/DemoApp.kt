@@ -10,12 +10,10 @@ class DemoApp(
     private val softAssert: SoftAssert
 ) {
 
-    fun onboarding(): OnboardingProvider {
-        return OnboardingProvider(driver, softAssert)
-    }
+    val onboarding: OnboardingProvider
+        get() = OnboardingProvider(driver, softAssert)
 
-    fun home(): HomeProvider {
-        return HomeProvider(driver,softAssert)
-    }
+    val home: HomeProvider
+        get() = HomeProvider(driver, softAssert)
 
 }

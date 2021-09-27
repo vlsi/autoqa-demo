@@ -10,15 +10,13 @@ class SignInTest : BaseTest() {
     @Test(description = "Sign in with correct credentials", groups = ["ios"])
     fun signInWithCorrectCredentialsTest() {
 
-        demoApp.onboarding().logInScreen()
-            .isLoginScreenLoaded
-            .setUserName("aaa")
-            .setPassword("xxx")
-            .tapSignInButton()
+        demoApp.onboarding.logInScreen {
+            setUserName("aaa")
+            setPassword("xxx")
+            tapSignInButton()
+        }
 
-        val homeScreen = demoApp.home().homeScreen()
-        with(homeScreen) {
-            isHomeScreenLoaded
+        demoApp.home.homeScreen {
             Assert.assertEquals("Test", getTitleText(), "Title text is not correct!")
         }
     }

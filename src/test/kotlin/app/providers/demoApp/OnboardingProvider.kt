@@ -9,8 +9,7 @@ class OnboardingProvider(
     private val softAssert: SoftAssert
 ) {
 
-    fun logInScreen(): LogInScreen {
-        return LogInScreen(driver, softAssert)
-    }
+    val logInScreen: LogInScreen
+        get() = LogInScreen(driver, softAssert)
 
 }
